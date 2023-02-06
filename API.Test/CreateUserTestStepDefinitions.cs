@@ -4,6 +4,7 @@ using API.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RestSharp;
 using System;
+using System.Configuration;
 using TechTalk.SpecFlow;
 
 namespace API.Test
@@ -11,7 +12,7 @@ namespace API.Test
     [Binding]
     public class CreateUserTestStepDefinitions
     {
-        private const string BASE_URL = "https://reqres.in/";
+        private string baseUrl = ConfigurationManager.AppSettings["baseUrl"];
         private readonly CreateUserReq createUserReq;
         private RestResponse response;
 
@@ -38,7 +39,7 @@ namespace API.Test
         public async System.Threading.Tasks.Task WhenISendCreateUserRequest()
         {
             var api = new Demo();
-            response = await api.CreateNewUser(BASE_URL, createUserReq);
+            response = await api.CreateNewUser(baseUrl, createUserReq);
 
         }
 

@@ -27,13 +27,14 @@ namespace API.Helpers
             {
                 Method = Method.Get
             };
-            //request.AddHeader("Accept", "application/json");
-            request.AddHeaders(new Dictionary<string, string>
-            {
-                { "Accept", "application/json" },
-                { "Content-Type", "application/json" }
+            request.AddHeader("Accept", "application/json");
+            //request.AddHeaders(new Dictionary<string, string>
+            //{
+            //    { "Accept", "application/json" },
+            //    { "Content-Type", "application/json" }
 
-            });
+            //});
+            request.RequestFormat = DataFormat.Json;
             return request;
         }
 

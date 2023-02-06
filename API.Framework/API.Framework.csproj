@@ -79,6 +79,9 @@
     <Compile Include="Models\CreateUserReq.cs" />
     <Compile Include="Models\CreateUserRes.cs" />
     <Compile Include="Models\ListOfUsers.cs" />
+    <Compile Include="Models\RegisterUnsuccessfulRes.cs" />
+    <Compile Include="Models\RegisterUserReq.cs" />
+    <Compile Include="Models\RegisterUserRes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

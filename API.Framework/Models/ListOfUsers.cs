@@ -6,28 +6,30 @@ using System.Threading.Tasks;
 
 namespace API.Framework.Models
 {
-    public class ListOfUsers
+
+    public partial class ListOfUsers
     {
-        public int page { get; set; }
-        public int per_page { get; set; }
-        public int total { get; set; }
-        public int total_pages { get; set; }
-        public Data[] data { get; set; }
-        public Support support { get; set; }
+        public long Page { get; set; }
+        public long PerPage { get; set; }
+        public long Total { get; set; }
+        public long TotalPages { get; set; }
+        public List<Datum> Data { get; set; }
+        public Support Support { get; set; }
     }
 
-    public class Support
+    public partial class Datum
     {
-        public string url { get; set; }
-        public string text { get; set; }
-    }
-
-    public class Data
-    {
-        public int id { get; set; }
-        public string email { get; set; }
+        public long Id { get; set; }
+        public string Email { get; set; }
         public string first_name { get; set; }
         public string last_name { get; set; }
-        public string avatar { get; set; }
+        public Uri Avatar { get; set; }
+    }
+
+    public partial class Support
+    {
+        public Uri Url { get; set; }
+        public string Text { get; set; }
     }
 }
+

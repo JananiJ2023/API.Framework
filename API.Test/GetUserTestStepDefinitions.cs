@@ -4,6 +4,9 @@ using API.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RestSharp;
 using System;
+using System.Configuration;
+using System.Linq;
+using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
 namespace API.Test
@@ -11,24 +14,31 @@ namespace API.Test
     [Binding]
     public class GetUserTestStepDefinitions
     {
-        private const string BASE_URL = "https://reqres.in/";
+        private string baseUrl = ConfigurationManager.AppSettings["baseUrl"];
         private RestResponse response;
+        private string userName;
 
-        [Given(@"list user request is sent")]
-        public void GivenListUserRequestIsSent()
-        {
-           
-        }
-
-        [Then(@"verify if ""([^""]*)"" ""([^""]*)"" is present in the list")]
-        public async System.Threading.Tasks.Task ThenVerifyIfIsPresentInTheList(string first_name, string last_name)
+        [Given(@"that I have sent the GET request to get users")]
+        public async Task GivenThatIHaveSentTheGETRequestToGetUsers()
         {
             var api = new Demo();
-            response = await api.GetUsers(BASE_URL);
-            var content = HandleContent.GetContent<Data>(response);
-            Assert.AreEqual(first_name, content.first_name);
-            Assert.AreEqual(last_name, content.last_name);
+            response = await api.GetUsers(baseUrl);
+        }
 
+        [When(@"I receive the response")]
+        public void WhenIReceiveTheResponse()
+        {
+            //response received in previous step.  No action required
+        }
+
+        [Then(@"the response should contain ""(.*)""")]
+        public void ThenTheResponseShouldContain(string name)
+        {
+            userName = name;
+            
+            var content = HandleContent.GetContent<ListOfUsers>(response);
+            var userNames = content.Data.Select(d => d.first_name + " " + d.last_name).ToList();
+            Assert.IsTrue(userNames.Contains(userName), "Expected user not found");
         }
     }
 }
