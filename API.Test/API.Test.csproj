@@ -69,6 +69,7 @@
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
@@ -101,13 +102,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GetUserTestStepDefinitions.cs" />
-    <Compile Include="Steps\CreateUserTestStepDefinitions.cs" />
+    <Compile Include="CreateUserTestStepDefinitions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuccessRegistrationTestStepDefinitions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Features\CreateUserTest.feature" />
     <None Include="Features\GetUserTest.feature" />
+    <None Include="Features\SuccessRegistrationTest.feature" />
     <None Include="packages.config" />
     <None Include="specflow.json" />
   </ItemGroup>

@@ -22,7 +22,6 @@ namespace API.Framework
         {
             var client = helper.SetUrl(baseUrl, "api/users?page=2");
             var request = helper.CreateGetRequest();
-            request.RequestFormat = DataFormat.Json;
             var response = await helper.GetResponseAsync(client, request);
             return response;
         }
@@ -31,6 +30,14 @@ namespace API.Framework
         {
             var client = helper.SetUrl(baseUrl, "api/users");
             var request = helper.CreatePostRequest<CreateUserReq>(payload);
+            var response = await helper.GetResponseAsync(client, request);
+            return response;
+        }
+
+        public async Task<RestResponse> RegisterNewUser(string baseUrl, dynamic payload)
+        {
+            var client = helper.SetUrl(baseUrl, "api/register");
+            var request = helper.CreatePostRequest<RegisterUserReq>(payload);
             var response = await helper.GetResponseAsync(client, request);
             return response;
         }
