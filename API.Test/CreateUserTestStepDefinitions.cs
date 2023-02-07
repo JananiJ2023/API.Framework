@@ -9,13 +9,14 @@ using TechTalk.SpecFlow;
 
 namespace API.Test
 {
+
     [Binding]
     public class CreateUserTestStepDefinitions
     {
         private string baseUrl = ConfigurationManager.AppSettings["baseUrl"];
         private readonly CreateUserReq createUserReq;
         private RestResponse response;
-
+        
         public CreateUserTestStepDefinitions(CreateUserReq createUserReq)
         {
             this.createUserReq = createUserReq;
@@ -50,8 +51,6 @@ namespace API.Test
             Assert.AreEqual(createUserReq.name, content.name);
             Assert.AreEqual(createUserReq.job, content.job);
         }
-
-
 
     }
 }

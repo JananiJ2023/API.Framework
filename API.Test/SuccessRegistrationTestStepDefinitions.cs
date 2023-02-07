@@ -44,6 +44,14 @@ namespace API.Test
             response = await api.RegisterNewUser(baseUrl, registerUserReq);
         }
 
+        //[When(@"I post a request to ""(.*)"" endpoint")]
+        //public async void WhenIPostARequestToEndpoint(string endpoint)
+        //{
+        //    var api = new Demo();
+        //    response = await api.RegisterNewUser(baseUrl, registerUserReq, endpoint);
+        //}
+
+
         [Then(@"I should receive ""(.*)"" status description")]
         public void ThenIShouldReceiveStatusCodeAndResponse(string statusDescription)
         {

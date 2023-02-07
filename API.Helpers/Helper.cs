@@ -28,12 +28,6 @@ namespace API.Helpers
                 Method = Method.Get
             };
             request.AddHeader("Accept", "application/json");
-            //request.AddHeaders(new Dictionary<string, string>
-            //{
-            //    { "Accept", "application/json" },
-            //    { "Content-Type", "application/json" }
-
-            //});
             request.RequestFormat = DataFormat.Json;
             return request;
         }
@@ -45,7 +39,6 @@ namespace API.Helpers
                 Method = Method.Post
             };
             request.AddHeader("Accept", "application/json");
-            //request.AddParameter("application/json", payload, ParameterType.RequestBody);
             request.AddBody(payload);
             request.RequestFormat = DataFormat.Json;
             return request;

@@ -41,5 +41,21 @@ namespace API.Framework
             var response = await helper.GetResponseAsync(client, request);
             return response;
         }
+
+        public async Task<RestResponse> LoginUser(string baseUrl, dynamic payload)
+        {
+            var client = helper.SetUrl(baseUrl, "api/login");
+            var request = helper.CreatePostRequest<RegisterUserReq>(payload);
+            var response = await helper.GetResponseAsync(client, request);
+            return response;
+        }
+
+        //public async Task<RestResponse> RegisterNewUser(string baseUrl, dynamic payload, string endpoint)
+        //{
+        //    var client = helper.SetUrl(baseUrl, endpoint);
+        //    var request = helper.CreatePostRequest<RegisterUserReq>(payload);
+        //    var response = await helper.GetResponseAsync(client, request);
+        //    return response;
+        //}
     }
 }
