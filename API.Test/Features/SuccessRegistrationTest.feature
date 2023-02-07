@@ -8,7 +8,7 @@ Scenario: Verify successful registration
 
 	@tag=negative
 Scenario: Verify unsuccessful registration
-	Given I have a valid email "sydney@fife" and password "pistol"
+	Given I have a invalid email "sydney@fife" and password "pistol"
 	When I post a request 
 	Then I should receive "Bad Request" status description
 

@@ -112,7 +112,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 5
- testRunner.Given("I have a valid email \"eve.holt@reqres.in\" and password \"cityslicka\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a valid email \"loginusername\" and password \"loginpassword\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
  testRunner.When("I post a request to login endpoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -145,7 +145,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 11
- testRunner.Given("I have a valid email \"eve.holt@reqres.in\" and password \"cityslicka\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a valid email \"loginusername\" and password \"loginpassword\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 12
  testRunner.When("I post a request to login endpoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -178,7 +178,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 17
- testRunner.Given("I have a valid email \"eve.holt@reqres.in\" only", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a valid email \"loginusername\" only", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 18
  testRunner.When("I post a request to login endpoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

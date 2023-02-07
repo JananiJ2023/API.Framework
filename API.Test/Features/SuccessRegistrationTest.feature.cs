@@ -145,7 +145,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 11
- testRunner.Given("I have a valid email \"sydney@fife\" and password \"pistol\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a invalid email \"sydney@fife\" and password \"pistol\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 12
  testRunner.When("I post a request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
