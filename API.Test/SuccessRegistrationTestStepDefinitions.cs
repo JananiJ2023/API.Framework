@@ -26,6 +26,9 @@ namespace API.Test
         [Given(@"I have a valid email ""(.*)"" and password ""(.*)""")]
         public void GivenIHaveAValidEmailAndPassword(string email, string password)
         {
+            email = ConfigurationManager.AppSettings["loginusername"];
+            password = ConfigurationManager.AppSettings["loginpassword"];
+
             registerUserReq.Email = email;
             registerUserReq.Password = password;
         }
@@ -33,6 +36,7 @@ namespace API.Test
         [Given(@"I have a valid email ""(.*)"" only")]
         public void GivenIHaveAValidEmailOnly(string email)
         {
+            email = ConfigurationManager.AppSettings["loginusername"];
             registerUserReq.Email = email;
         }
 
@@ -43,6 +47,14 @@ namespace API.Test
             var api = new Demo();
             response = await api.RegisterNewUser(baseUrl, registerUserReq);
         }
+
+        //[When(@"I post a request to ""(.*)"" endpoint")]
+        //public async void WhenIPostARequestToEndpoint(string endpoint)
+        //{
+        //    var api = new Demo();
+        //    response = await api.RegisterNewUser(baseUrl, registerUserReq, endpoint);
+        //}
+
 
         [Then(@"I should receive ""(.*)"" status description")]
         public void ThenIShouldReceiveStatusCodeAndResponse(string statusDescription)
@@ -56,6 +68,13 @@ namespace API.Test
             var content = HandleContent.GetContent<RegisterUnsuccessfulRes>(response);
             Assert.AreEqual(errorMessage, content.Error);
         }
+        [Given(@"I have a invalid email ""(.*)"" and password ""(.*)""")]
+        public void GivenIHaveAInvalidEmailAndPassword(string email, string password)
+        {
+            registerUserReq.Email = email;
+            registerUserReq.Password = password;
+        }
+
 
 
     }
