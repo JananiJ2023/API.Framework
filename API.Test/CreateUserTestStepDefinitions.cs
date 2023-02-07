@@ -5,18 +5,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RestSharp;
 using System;
 using System.Configuration;
+using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
 namespace API.Test
 {
 
     [Binding]
-    public class CreateUserTestStepDefinitions
+    public class CreateUserTestStepDefinitions : Reusable
     {
-        private string baseUrl = ConfigurationManager.AppSettings["baseUrl"];
         private readonly CreateUserReq createUserReq;
-        private RestResponse response;
-        
+  
         public CreateUserTestStepDefinitions(CreateUserReq createUserReq)
         {
             this.createUserReq = createUserReq;
@@ -37,7 +36,7 @@ namespace API.Test
         }
 
         [When(@"I send create user request")]
-        public async System.Threading.Tasks.Task WhenISendCreateUserRequest()
+        public async Task WhenISendCreateUserRequest()
         {
             var api = new Demo();
             response = await api.CreateNewUser(baseUrl, createUserReq);

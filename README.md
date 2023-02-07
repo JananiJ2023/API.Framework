@@ -22,5 +22,8 @@
 ### The framework should be able to run in multiple environment
 - The base url is configured in appconfig file.  Based on requirement it can be altered for different environments 
 
+### The framework should be able to use secrets/passwords/sensitive information effectively.
+- Sensitive information such as username and password are not exposed in step definition file.  Example - SuccessRegistrationTestStep.  The username and password are retrived from appconfig file instead of being directly used in steps
+
 
 

@@ -94,11 +94,11 @@ namespace API.Test.Features
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify successful registration")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SuccessRegistrationTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("tag=positive")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("positive")]
         public void VerifySuccessfulRegistration()
         {
             string[] tagsOfScenario = new string[] {
-                    "tag=positive"};
+                    "positive"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify successful registration", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
@@ -127,11 +127,11 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify unsuccessful registration")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SuccessRegistrationTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("tag=negative")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("negative")]
         public void VerifyUnsuccessfulRegistration()
         {
             string[] tagsOfScenario = new string[] {
-                    "tag=negative"};
+                    "negative"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify unsuccessful registration", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 10
@@ -160,11 +160,11 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify error message when no email id")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SuccessRegistrationTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("tag=negative")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("negative")]
         public void VerifyErrorMessageWhenNoEmailId()
         {
             string[] tagsOfScenario = new string[] {
-                    "tag=negative"};
+                    "negative"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify error message when no email id", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 16
