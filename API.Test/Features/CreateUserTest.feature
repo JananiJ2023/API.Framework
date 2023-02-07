@@ -1,5 +1,6 @@
 ﻿Feature: CreateUserTest
 
+@positive
 Scenario: Add a user
 	Given I input name "Jan"
 	And I input role "QA"

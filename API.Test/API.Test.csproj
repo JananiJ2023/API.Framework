@@ -463,6 +463,7 @@
     <Compile Include="LoginTestStepDefinitions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuccessRegistrationTestStepDefinitions.cs" />
+    <Compile Include="UpdateUserTestStepDefinitions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -470,6 +471,7 @@
     <None Include="Features\GetUserTest.feature" />
     <None Include="Features\LoginTest.feature" />
     <None Include="Features\SuccessRegistrationTest.feature" />
+    <None Include="Features\UpdateUserTest.feature" />
     <None Include="packages.config" />
     <None Include="specflow.json" />
   </ItemGroup>

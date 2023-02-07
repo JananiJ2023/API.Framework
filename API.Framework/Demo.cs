@@ -50,12 +50,12 @@ namespace API.Framework
             return response;
         }
 
-        //public async Task<RestResponse> RegisterNewUser(string baseUrl, dynamic payload, string endpoint)
-        //{
-        //    var client = helper.SetUrl(baseUrl, endpoint);
-        //    var request = helper.CreatePostRequest<RegisterUserReq>(payload);
-        //    var response = await helper.GetResponseAsync(client, request);
-        //    return response;
-        //}
+        public async Task<RestResponse> UpdateUser(string baseUrl, dynamic payload)
+        {
+            var client = helper.SetUrl(baseUrl, "api/user/2");
+            var request = helper.CreatePatchRequest<CreateUserReq>(payload);
+            var response = await helper.GetResponseAsync(client, request);
+            return response;
+        }
     }
 }

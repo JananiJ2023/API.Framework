@@ -2,20 +2,15 @@ using API.Framework;
 using API.Framework.Models;
 using API.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RestSharp;
-using System;
-using System.Configuration;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
 namespace API.Test
 {
     [Binding]
-    public class LoginTestStepDefinitions
+    public class LoginTestStepDefinitions : Reusable
     {
-        private string baseUrl = ConfigurationManager.AppSettings["baseUrl"];
         private readonly RegisterUserReq registerUserReq;
-        private RestResponse response;
 
         public LoginTestStepDefinitions(RegisterUserReq registerUserReq)
         {
@@ -46,8 +41,7 @@ namespace API.Test
         [Then(@"I should receive ""(.*)"" Error message for login")]
         public void ThenIShouldReceiveErrorMessage(string errorMessage)
         {
-            var content = HandleContent.GetContent<RegisterUnsuccessfulRes>(response);
-            Assert.AreEqual(errorMessage, content.Error);
+            VerifyErrorMessage(errorMessage);
         }
 
     }

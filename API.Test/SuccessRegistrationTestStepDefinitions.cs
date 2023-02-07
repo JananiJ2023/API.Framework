@@ -1,7 +1,5 @@
 using API.Framework;
 using API.Framework.Models;
-using RestSharp;
-using System;
 using TechTalk.SpecFlow;
 using System.Threading.Tasks;
 using API.Helpers;
@@ -11,13 +9,10 @@ using System.Configuration;
 namespace API.Test
 {
     [Binding]
-    public class SuccessRegistrationTestStepDefinitions
+    public class SuccessRegistrationTestStepDefinitions : Reusable
     {
-        private string baseUrl = ConfigurationManager.AppSettings["baseUrl"];
         private readonly RegisterUserReq registerUserReq;
-        private readonly RegisterUnsuccessfulRes registerUnsuccessfulRes;
-        private RestResponse response;
-
+        
         public SuccessRegistrationTestStepDefinitions(RegisterUserReq registerUserReq)
         {
             this.registerUserReq = registerUserReq;
@@ -48,14 +43,6 @@ namespace API.Test
             response = await api.RegisterNewUser(baseUrl, registerUserReq);
         }
 
-        //[When(@"I post a request to ""(.*)"" endpoint")]
-        //public async void WhenIPostARequestToEndpoint(string endpoint)
-        //{
-        //    var api = new Demo();
-        //    response = await api.RegisterNewUser(baseUrl, registerUserReq, endpoint);
-        //}
-
-
         [Then(@"I should receive ""(.*)"" status description")]
         public void ThenIShouldReceiveStatusCodeAndResponse(string statusDescription)
         {
@@ -65,8 +52,7 @@ namespace API.Test
         [Then(@"I should receive ""(.*)"" Error message")]
         public void ThenIShouldReceiveErrorMessage(string errorMessage)
         {
-            var content = HandleContent.GetContent<RegisterUnsuccessfulRes>(response);
-            Assert.AreEqual(errorMessage, content.Error);
+            VerifyErrorMessage(errorMessage);
         }
         [Given(@"I have a invalid email ""(.*)"" and password ""(.*)""")]
         public void GivenIHaveAInvalidEmailAndPassword(string email, string password)
