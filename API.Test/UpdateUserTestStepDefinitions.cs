@@ -21,7 +21,7 @@ namespace API.Test
         public async Task WhenISendUpdateUserRequest()
         {
             var api = new Demo();
-            response = await api.UpdateUser(baseUrl, createUserReq);
+            response = await api.UpdateUser(baseUrl, createUserReq, updateUserEndpoint);
         }
 
         [Then(@"validate user is updated")]

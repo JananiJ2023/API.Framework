@@ -40,7 +40,7 @@ namespace API.Test
         public async Task WhenIPostARequest()
         {
             var api = new Demo();
-            response = await api.RegisterNewUser(baseUrl, registerUserReq);
+            response = await api.RegisterNewUser(baseUrl, registerUserReq, registerUserEndpoint);
         }
 
         [Then(@"I should receive ""(.*)"" status description")]

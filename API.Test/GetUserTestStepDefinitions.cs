@@ -16,7 +16,7 @@ namespace API.Test
         public async Task GivenThatIHaveSentTheGETRequestToGetUsers()
         {
             var api = new Demo();
-            response = await api.GetUsers(baseUrl);
+            response = await api.GetUsers(baseUrl, getUserEndpoint);
         }
 
         [When(@"I receive the response")]

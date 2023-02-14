@@ -21,7 +21,7 @@ namespace API.Test
         public async Task WhenIPostARequestToLoginEndpoint()
         {
             var api = new Demo();
-            response = await api.LoginUser(baseUrl, registerUserReq);
+            response = await api.LoginUser(baseUrl, registerUserReq, loginEndpoint);
         }
 
         [Then(@"I should receive ""(.*)"" for login API status description")]

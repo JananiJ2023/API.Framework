@@ -458,6 +458,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetSingleUserTestStepDefinitions.cs" />
     <Compile Include="GetUserTestStepDefinitions.cs" />
     <Compile Include="CreateUserTestStepDefinitions.cs" />
     <Compile Include="LoginTestStepDefinitions.cs" />
@@ -468,6 +469,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Features\CreateUserTest.feature" />
+    <None Include="Features\GetSingleUserTest.feature" />
     <None Include="Features\GetUserTest.feature" />
     <None Include="Features\LoginTest.feature" />
     <None Include="Features\SuccessRegistrationTest.feature" />

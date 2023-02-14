@@ -39,7 +39,7 @@ namespace API.Test
         public async Task WhenISendCreateUserRequest()
         {
             var api = new Demo();
-            response = await api.CreateNewUser(baseUrl, createUserReq);
+            response = await api.CreateNewUser(baseUrl, createUserReq, createUserEndpoint);
 
         }
 
