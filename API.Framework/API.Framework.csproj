@@ -437,6 +437,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\GetSingleUserRes.cs" />
     <Compile Include="Reusable.cs" />
     <Compile Include="Demo.cs" />
     <Compile Include="Models\CreateUserReq.cs" />

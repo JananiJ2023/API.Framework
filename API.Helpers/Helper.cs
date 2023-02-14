@@ -24,7 +24,7 @@ namespace API.Helpers
             return client;
         }
 
-        public RestRequest CreateGetRequest()
+        public  RestRequest CreateGetRequest()
         {
             request = new RestRequest()
             {
